@@ -16,7 +16,7 @@ class _ListStudentPageState extends State<ListStudentPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
       child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Table(
@@ -31,7 +31,7 @@ class _ListStudentPageState extends State<ListStudentPage> {
                 TableCell(
                   child: Container(
                     color: Colors.greenAccent,
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         'Name',
                         style: TextStyle(
@@ -45,7 +45,7 @@ class _ListStudentPageState extends State<ListStudentPage> {
                 TableCell(
                   child: Container(
                     color: Colors.greenAccent,
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         'Email',
                         style: TextStyle(
@@ -59,7 +59,7 @@ class _ListStudentPageState extends State<ListStudentPage> {
                 TableCell(
                   child: Container(
                     color: Colors.greenAccent,
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         'Action',
                         style: TextStyle(
@@ -74,7 +74,7 @@ class _ListStudentPageState extends State<ListStudentPage> {
             ),
             TableRow(
               children: [
-                TableCell(
+                const TableCell(
                   child: Center(
                     child: Text(
                       'Test1',
@@ -82,7 +82,7 @@ class _ListStudentPageState extends State<ListStudentPage> {
                     ),
                   ),
                 ),
-                TableCell(
+                const TableCell(
                   child: Center(
                     child: Text(
                       'test1@test.com',
@@ -99,11 +99,13 @@ class _ListStudentPageState extends State<ListStudentPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => UpdateStudentPage(),
+                              builder: (context) => UpdateStudentPage(
+                                id: '',
+                              ),
                             ),
                           );
                         },
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.edit,
                           color: Colors.orange,
                         ),
@@ -112,7 +114,7 @@ class _ListStudentPageState extends State<ListStudentPage> {
                         onPressed: () {
                           deleteUser(1);
                         },
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.delete,
                           color: Colors.red,
                         ),

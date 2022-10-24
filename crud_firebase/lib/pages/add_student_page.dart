@@ -42,22 +42,22 @@ class _AddStudentPageState extends State<AddStudentPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add New Student'),
+        title: const Text('Add New Student'),
       ),
       body: Form(
         key: _formKey,
         child: Padding(
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             vertical: 20,
             horizontal: 20,
           ),
           child: ListView(
             children: [
               Container(
-                margin: EdgeInsets.symmetric(vertical: 10),
+                margin: const EdgeInsets.symmetric(vertical: 10),
                 child: TextFormField(
                   autofocus: false,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Name : ',
                     labelStyle: TextStyle(fontSize: 20),
                     border: OutlineInputBorder(),
@@ -74,10 +74,10 @@ class _AddStudentPageState extends State<AddStudentPage> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 10),
+                margin: const EdgeInsets.symmetric(vertical: 10),
                 child: TextFormField(
                   autofocus: false,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Email : ',
                     labelStyle: TextStyle(fontSize: 20),
                     border: OutlineInputBorder(),
@@ -96,11 +96,11 @@ class _AddStudentPageState extends State<AddStudentPage> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 10),
+                margin: const EdgeInsets.symmetric(vertical: 10),
                 child: TextFormField(
                   autofocus: false,
                   obscureText: true,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Password : ',
                     labelStyle: TextStyle(fontSize: 20),
                     border: OutlineInputBorder(),
@@ -133,7 +133,7 @@ class _AddStudentPageState extends State<AddStudentPage> {
                           });
                         }
                       },
-                      child: Text(
+                      child: const Text(
                         'Register',
                         style: TextStyle(fontSize: 18),
                       ),
@@ -142,7 +142,7 @@ class _AddStudentPageState extends State<AddStudentPage> {
                       onPressed: () {
                         clearText();
                       },
-                      child: Text(
+                      child: const Text(
                         'Reset',
                         style: TextStyle(fontSize: 18),
                       ),
