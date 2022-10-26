@@ -13,8 +13,16 @@ class _ListStudentPageState extends State<ListStudentPage> {
   final Stream<QuerySnapshot> studentsStream =
       FirebaseFirestore.instance.collection('students').snapshots();
 
-  deleteUser(id) {
-    print('User Deleted $id');
+  //for deleting user
+  CollectionReference students =
+      FirebaseFirestore.instance.collection('students');
+  Future<void> deleteUser(id) {
+    //print('User Deleted $id');
+    return students
+        .doc(id)
+        .delete()
+        .then((value) => print('user deleted'))
+        .catchError((error) => print('failed to delete user: $error'));
   }
 
   @override
@@ -33,6 +41,7 @@ class _ListStudentPageState extends State<ListStudentPage> {
         snapshot.data!.docs.map((DocumentSnapshot document) {
           Map a = document.data() as Map<String, dynamic>;
           storeDocs.add(a);
+          a['id'] = document.id;
         }).toList();
 
         return Container(
@@ -133,7 +142,7 @@ class _ListStudentPageState extends State<ListStudentPage> {
                             ),
                             IconButton(
                               onPressed: () {
-                                print(storeDocs);
+                                deleteUser(storeDocs[i]['id']);
                               },
                               icon: const Icon(
                                 Icons.delete,
