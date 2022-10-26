@@ -130,7 +130,7 @@ class _ListStudentPageState extends State<ListStudentPage> {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => UpdateStudentPage(
-                                      id: '',
+                                      id: storeDocs[i]['id'],
                                     ),
                                   ),
                                 );
