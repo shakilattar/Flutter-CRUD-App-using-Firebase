@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class AddStudentPage extends StatefulWidget {
@@ -34,8 +35,16 @@ class _AddStudentPageState extends State<AddStudentPage> {
     passwordController.clear();
   }
 
-  addUser() {
-    print('User added');
+  //adding student
+  CollectionReference students =
+      FirebaseFirestore.instance.collection('students');
+
+  Future<void> addUser() {
+    //print('User added');
+    return students
+        .add({'name': name, 'email': email, 'password': password})
+        .then((value) => print('User added'))
+        .catchError((error) => print('Failed to add user: $error'));
   }
 
   @override
